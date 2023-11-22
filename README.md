@@ -80,6 +80,8 @@ You can also exclude some tags from being sent with the `removeTags` property
 const logger = pino(createTransport(options, ['pid', 'hostname']));
 ```
 
+## Contribution
+
 Feel free to contribute to this package by opening up a pull request.
 
-This package was inspired on the package [pino-slack-transport](https://github.com/ChrisLahaye/pino-slack-transport). I believe the creator of the package is due some credit because I could only achieve because of their work.
+This package was inspired on the package [pino-slack-transport](https://github.com/ChrisLahaye/pino-slack-transport). I believe the creator of the package is due some credit.
