@@ -31,6 +31,12 @@ logger.info('Hello World!');
 
 ```
 
+The code above should produce this message on your discord chat
+
+```shell
+{"level":30,"time":1700664087252,"pid":0,"hostname":"your-pc-hostname","msg":"Hello World!"}
+```
+
 This was created to be used within a [Fastify](https://github.com/fastify/fastify) application.
 
 Here is an example on how to to use this transport within a fastify application.
@@ -67,3 +73,7 @@ const server = async () => {
 
 server();
 ```
+
+Feel free to contribute to this package by opening up a pull request.
+
+This package was inspired on the package [pino-slack-transport](https://github.com/ChrisLahaye/pino-slack-transport). I believe the creator of the package is due some credit because I could only achieve because of their work.
