@@ -74,6 +74,12 @@ const server = async () => {
 server();
 ```
 
+You can also exclude some tags from being sent with the `removeTags` property
+
+```js
+const logger = pino(createTransport(options, ['pid', 'hostname']));
+```
+
 Feel free to contribute to this package by opening up a pull request.
 
 This package was inspired on the package [pino-slack-transport](https://github.com/ChrisLahaye/pino-slack-transport). I believe the creator of the package is due some credit because I could only achieve because of their work.
