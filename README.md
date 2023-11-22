@@ -8,7 +8,7 @@ This module provides a transport for [pino](https://github.com/pinojs/pino) to s
 ## Install
 
 ```shell
-yarn install pino-discord-transport
+yarn add pino-discord-transport
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ For test purposes
 
 ```js
 
-import { createTransport } from '../lib/index.js';
+import { createTransport } from 'pino-discord-transport';
 import { pino }  from 'pino';
 
 const options = {
@@ -43,7 +43,7 @@ Here is an example on how to to use this transport within a fastify application.
 
 ```js
 import Fastify from 'fastify';
-import { createTransport } from './pino-discord.js';
+import { createTransport } from 'pino-discord-transport';
 import { pino } from 'pino';
 
 const options = {
