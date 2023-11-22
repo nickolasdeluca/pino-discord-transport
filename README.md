@@ -1,0 +1,69 @@
+# pino-discord-transport
+
+[![npm version](https://img.shields.io/npm/v/pino-discord-transport)](https://www.npmjs.com/package/pino-discord-transport)
+[![npm downloads](https://img.shields.io/npm/dm/pino-discord-transport.svg)](https://www.npmjs.com/package/pino-discord-transport)
+
+This module provides a transport for [pino](https://github.com/pinojs/pino) to send logs over [discord](discord.com) webhooks.
+
+## Install
+
+```shell
+yarn install pino-discord-transport
+```
+
+## Usage
+
+For test purposes
+
+```js
+
+import { createTransport } from '../lib/index.js';
+import { pino }  from 'pino';
+
+const options = {
+  webhookUrl: 'add your webhook url here',
+  webhookType: 1,
+};
+
+const logger = pino(createTransport(options));
+
+logger.info('Hello World!');
+
+```
+
+This was created to be used within a [Fastify](https://github.com/fastify/fastify) application.
+
+Here is an example on how to to use this transport within a fastify application.
+
+```js
+import Fastify from 'fastify';
+import { createTransport } from './pino-discord.js';
+import { pino } from 'pino';
+
+const options = {
+  webhookUrl: 'add your webhook url here', 
+  webhookType: 1, // optional, defaults to 1 if not specified
+};
+
+const discordLogger = pino(createTransport(options));
+
+const fastify = Fastify({
+  logger: discordLogger,
+});
+
+const server = async () => {
+  await fastify.ready();
+
+  try {
+    fastify.listen({
+      host: 'localhost',
+      port: 3000,
+    });
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+};
+
+server();
+```
