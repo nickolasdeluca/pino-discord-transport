@@ -80,6 +80,14 @@ You can also exclude some tags from being sent with the `removeTags` property
 const logger = pino(createTransport(options, ['pid', 'hostname']));
 ```
 
+It's also possible to search for specific keywords in the log message and stop them from being sent using the `filterMsgByKeyword` property
+
+```js
+const logger = pino(createTransport(options, [], ["hello"]));
+```
+
+The log message is parsed to lowercase before the search, so you should add only lowercase keywords.
+
 ## Contribution
 
 Feel free to contribute to this package by opening up a pull request.
