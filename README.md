@@ -23,6 +23,7 @@ import { pino }  from 'pino';
 const options = {
   webhookUrl: 'add your webhook url here',
   webhookType: 1,
+  title: 'Test'
 };
 
 const logger = pino(createTransport(options));
@@ -33,9 +34,7 @@ logger.info('Hello World!');
 
 The code above should produce this message on your discord chat
 
-```shell
-{"level":30,"time":1700664087252,"pid":0,"hostname":"your-pc-hostname","msg":"Hello World!"}
-```
+![message-type-info](https://github.com/nickolasdeluca/pino-discord-transport/assets/17858166/54601b1e-335f-464f-b184-5e97cf1d9dd3)
 
 This was created to be used within a [Fastify](https://github.com/fastify/fastify) application.
 
@@ -49,6 +48,7 @@ import { pino } from 'pino';
 const options = {
   webhookUrl: 'add your webhook url here', 
   webhookType: 1, // optional, defaults to 1 if not specified
+  title: 'Test',
 };
 
 const discordLogger = pino(createTransport(options));
