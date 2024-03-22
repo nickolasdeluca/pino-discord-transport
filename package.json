@@ -1,31 +1,40 @@
 {
   "name": "pino-discord-transport",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A pino transport that sends logs to discord trough chat webhooks",
   "main": "lib/index.js",
-  "keywords": [
-    "pino",
-    "transport",
-    "discord",
-    "webhook"
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
   ],
-  "type": "module",
-  "scripts": {
-    "test": "node test/script.js"
-  },
   "repository": {
     "type": "git",
     "url": "github:nickolasdeluca/pino-discord-transport"
   },
+  "keywords": [
+    "logger",
+    "discord",
+    "pino"
+  ],
+  "homepage": "https://github.com/nickolasdeluca/pino-discord-transport#readme",
   "author": "Nickolas de Luca Alberton",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nickolasdeluca/pino-discord-transport/issues"
   },
-  "homepage": "https://github.com/nickolasdeluca/pino-discord-transport#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
+  },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "pino": "^8.15.0",
+    "@types/node-fetch": "^2.6.11",
+    "axios": "^1.6.8",
     "pino-abstract-transport": "^1.1.0"
+  },
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc",
+    "prepare": "tsc",
+    "test": "tsc && node test"
   }
 }
